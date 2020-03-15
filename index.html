@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Typing Game</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <h1 id="m-title">Welcome to Chris's typing Game</h1>
+
+        <div id="textConfigDiv">
+            <p style="color:orangered">Every time you make an update, you have to click submit</p>
+                <label for="numberOfWords">Number of Words: </label>
+                <input type="number" name="numberOfWords" id="numberOfWords" min="10" max="200" value=10 required>
+                <br>
+                <p>Select Your Typing Mode:</p>
+                <input type="radio" id='m1' name="typingMode" value="normal" checked>
+                <label for="normal">Normal Mode</label>
+                <br>
+                <input type="radio" id="m2" name="typingMode" value="capitalize">
+                <label for="capitalize">Capitalize Mode</label>
+                <br>
+                <input type="radio" id="m3" name="typingMode" value="spongebob">
+                <label for="spongebob">Spongebob Mode</label>
+                <br>
+                <input type="button" onclick="validateForm();toggleTextArea('true');" value="Submit">
+        </div>
+        
+        <div class="stopwatchDiv">
+            <div id="stopwatch">00:00:00</div>
+            <button onclick="timerReset()">Reset</button>
+        </div>
+
+        <div id='textArea'>
+            <p id="textOof"></p>
+            <input style="font-size: 25px;" type="text" id="txt-area" size="100" onkeyup="spellCheck();" value="Blablabla" onfocus="this.value='';">
+            <div id="txt-check"></div>
+            <div id="time">0</div>
+        </div>
+
+
+        <script src="scriptFun.js" type="text/javascript"></script>
+    </body>
+</html>
