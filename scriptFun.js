@@ -52,7 +52,10 @@ function spellCheck() {
     var txt = document.getElementById('txt-area').value;
     if (promptA.startsWith(txt)) {
         if (promptA == txt) {
-            alert('This is your time: ' + String(leng) + ' words in ' + document.getElementById('stopwatch').textContent + ' time');
+            var secondToMinute = m + (s / 60) + (ms / 60000);
+            var WPM = leng / secondToMinute;
+            WPM = WPM.toFixed(2);
+            alert('This is your time: ' + String(leng) + ' words in ' + document.getElementById('stopwatch').textContent + ' time / WPM: ' + String(WPM));
             timerReset();
             document.getElementById('txt-area').value = '';
             createPrompt(leng);
